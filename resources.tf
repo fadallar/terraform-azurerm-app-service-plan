@@ -15,5 +15,5 @@ resource "azurerm_service_plan" "plan" {
   app_service_environment_id = var.app_service_environment_id
   per_site_scaling_enabled   = var.per_site_scaling_enabled
 
-  tags = merge(variable.default_tags, var.extra_tags)
+  tags = merge(var.default_tags, var.extra_tags)
 }
