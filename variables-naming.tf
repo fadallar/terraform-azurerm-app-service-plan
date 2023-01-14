@@ -4,7 +4,7 @@
 variable "custom_name" {
   description = "Custom Azure Static Site name, it will overide the generate name if set"
   type        = string
-  default     = null
+  default     = ""
 }
 
 variable "workload_info" {
