@@ -1,13 +1,12 @@
 resource "azurerm_service_plan" "plan" {
-  name = local.app_service_plan_name
-
+  name = local.name
   location            = var.location
   resource_group_name = var.resource_group_name
 
   os_type  = var.os_type
   sku_name = var.sku_name
-
   worker_count                 = var.sku_name == "Y1" ? null : var.worker_count
+  
   #Not applicable unless sku is an elastic sku EP1, EP2, or EP3
   #Elastic sku are usable by function app
   maximum_elastic_worker_count = var.maximum_elastic_worker_count
