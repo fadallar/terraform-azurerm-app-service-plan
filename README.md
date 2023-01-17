@@ -6,8 +6,6 @@
 This Terraform module creates an [Azure Service Plan](https://docs.microsoft.com/en-us/azure/app-service/overview-hosting-plans)
 
 
-## Requirements and limitations
-
 <!-- BEGIN_TF_DOCS -->
 
 <!-- END_TF_DOCS -->

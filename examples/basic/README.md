@@ -1,5 +1,17 @@
-// Basic Azure Resource Group Setup
+# Basic Azure Application Service PLan
 
+This is an example for setting-up a an App Service Plan
+ This examples creates
+  - Sets the different Azure Region representation ( location, location_short, location_cli ...) --> module "regions_master"
+  - Instanciates a map object with the common Tags ot be applied to all resources --> module "base_tagging"
+  - A resource-group --> module "ressource" 
+  - Creates an Application Service Plan
+  - Set the default diagnostics settings (All Logs and metric) whith a Log Analytics workspace as destination 
+
+## Main.tf file content
+  Please replace the modules source and version with your relevant information  
+
+```hcl
 // Core modules
 
 module "regions_master" {
@@ -33,12 +45,17 @@ module "app_service_plan" {
   source  = "app.terraform.io/<ORGANIZATION>/app-service-plan/azurerm"
   version = "x.y.z"
   environment = var.environment
+  landing_zone_slug = var.landing_zone_slug
   stack       = var.stack
   location                        = module.regions_master.location
   location_short                  = module.regions_master.location_short
   resource_group_name             = module.rg.resource_group_name
   default_tags                    = module.base-tagging.base_tags
+
+  diag_log_analytics_workspace_id = ""    #### Log Analytics Workspace Resource Id
+  // App service Plan specific configuration
   os_type = "Linux"
   sku_name = "P1v2"
   worker_count = 1
 }
+```
