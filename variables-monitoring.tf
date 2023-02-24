@@ -20,3 +20,14 @@ variable "log_analytics_destination_type" {
   type = string
   default = "Dedicated"
 }
+
+variable "diag_metric_categories" {
+  description = "List of metric categories to enable in the diagnostic settings"
+  type = list(string)
+  default = ["AllMetrics"]
+}
+variable "diag_log_categories" {
+  description = "List of categories to enable in the diagnostic settings"
+  type = list(string)
+  default = []
+}
