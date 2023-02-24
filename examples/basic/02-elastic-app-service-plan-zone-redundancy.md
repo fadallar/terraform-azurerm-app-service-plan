@@ -1,11 +1,11 @@
 # Basic Azure Application Service PLan
 
-This is an example for setting-up a an App Service Plan
- This examples creates
+This is an example for setting-up a an Elastic App Service Plan to be used by Azure Function App
+ This example
   - Sets the different Azure Region representation ( location, location_short, location_cli ...) --> module "regions_master"
   - Instanciates a map object with the common Tags ot be applied to all resources --> module "base_tagging"
   - A resource-group --> module "ressource" 
-  - Creates an Application Service Plan
+  - Creates an Application Service Plan with Elastic Service Plan and zone redundancy
   - Set the default diagnostics settings (All Logs and metric) whith a Log Analytics workspace as destination 
 
 ## Main.tf file content
@@ -56,6 +56,7 @@ module "app_service_plan" {
   // App service Plan specific configuration
   os_type = "Linux"
   sku_name = "P1v2"
-  worker_count = 1
+  worker_count = 6  # it must be a multiple of the number of AZ in the region
+  zone_redundancy = true
 }
 ```

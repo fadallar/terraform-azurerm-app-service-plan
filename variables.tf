@@ -66,3 +66,12 @@ variable "per_site_scaling_enabled" {
   type        = bool
   default     = false
 }
+
+variable "zone_balancing_enabled" {
+  description = <<EOF Should the Service Plan balance across Availability Zones in the region. 
+  Changing this forces a new resource to be created.
+  If this setting is set to true and the worker_count value is specified, it should be set to a multiple of the number of availability zones in the region
+  EOF>>
+  type = bool
+  default = false
+}
