@@ -14,3 +14,9 @@ variable "diag_storage_account_id" {
   type = string
   default = null
 }
+
+variable "log_analytics_destination_type" {
+  description = "Possible values are AzureDiagnostics and Dedicated. Recommended value is Dedicated"
+  type = string
+  default = "Dedicated"
+}
