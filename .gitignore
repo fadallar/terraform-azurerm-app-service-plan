@@ -1,4 +1,10 @@
 .terraform
 *.tfvars
 .terraform.lock.hcl
+<<<<<<< HEAD
 .terraform-docs.yml
+=======
+main.tf
+terraform.tfvars
+.terraform-docs.yml
+>>>>>>> dc137c910c14ce67b8c6dba8265c7b2d00b8ec52
