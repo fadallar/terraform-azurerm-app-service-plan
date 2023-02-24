@@ -9,7 +9,7 @@ output "service_plan_kind" {
 }
 
 output "service_plan_reserved" {
-  description
+  description = "Is service plan reserved. True if the plan is for Linux"
   value = azurerm_service_plan.plan.reserved
 }
 
