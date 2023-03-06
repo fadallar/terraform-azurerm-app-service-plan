@@ -57,6 +57,6 @@ module "app_service_plan" {
   os_type = "Linux"
   sku_name = "EP1"
   worker_count = 6  # it must be a multiple of the number of AZ in the region
-  zone_redundancy = true
+  zone_balancing_enabled = true
 }
 ```
