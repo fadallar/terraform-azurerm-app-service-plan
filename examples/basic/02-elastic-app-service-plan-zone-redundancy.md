@@ -55,7 +55,7 @@ module "app_service_plan" {
   diag_log_analytics_workspace_id = ""    #### Log Analytics Workspace Resource Id
   // App service Plan specific configuration
   os_type = "Linux"
-  sku_name = "P1v2"
+  sku_name = "EP1"
   worker_count = 6  # it must be a multiple of the number of AZ in the region
   zone_redundancy = true
 }
