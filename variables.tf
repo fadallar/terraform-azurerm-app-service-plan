@@ -73,6 +73,6 @@ variable "zone_balancing_enabled" {
   Changing this forces a new resource to be created.
   If this setting is set to true and the worker_count value is specified, it should be set to a multiple of the number of availability zones in the region
   DESC
-  type = bool
-  default = false
+  type        = bool
+  default     = false
 }
