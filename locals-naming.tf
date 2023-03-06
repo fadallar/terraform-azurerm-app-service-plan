@@ -1,10 +1,10 @@
 locals {
  
-  service_slug           = "stapp"
+  service_slug           = "asp"
   landing_zone_slug      = var.landing_zone_slug
   application_id         = var.stack
   workload_info          = var.workload_info
-  environment            = var.environment
+  #environment            = var.environment
   location_short         = var.location_short
   separator              = "-"
   generated_random_value = random_string.random.result
